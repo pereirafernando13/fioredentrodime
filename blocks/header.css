@@ -1,0 +1,73 @@
+.header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  align-items: center;
+}
+
+.header__logo {
+  font-family: "Italiana";
+  font-size: 45px;
+}
+
+.header__nav {
+  display: flex;
+  font-family: "Italiana";
+  font-size: 25px;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__nav-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.header__nav-link:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 180px;
+    display: flex;
+    align-items: center;
+  }
+
+  .header__logo {
+    font-size: 40px;
+    font-family: "Italiana";
+  }
+
+  .header__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header__logo {
+    font-size: 28px;
+    font-family: "Italiana";
+  }
+
+  .header__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    align-items: center;
+  }
+}
