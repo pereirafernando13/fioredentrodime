@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Gallery from "./components/Gallery/Gallery";
+import About from "./components/About/About";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Header />
         <Main />
         <Gallery />
+        <About />
       </div>
     </>
   );
