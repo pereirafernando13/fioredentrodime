@@ -1,7 +1,13 @@
+// /api/trefle-claim.js
 export default async function handler(req, res) {
   try {
+    // Em produção na Vercel, esse header vem certinho. Se não vier, usa VERCEL_URL.
     const origin =
-      req.headers.origin || process.env.PUBLIC_URL || "http://localhost:5173";
+      req.headers.origin ||
+      (process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "http://localhost:5173");
+
     const token = process.env.TREFLE_TOKEN;
 
     const r = await fetch("https://trefle.io/api/auth/claim", {
