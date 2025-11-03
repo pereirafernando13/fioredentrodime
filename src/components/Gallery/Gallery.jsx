@@ -1,4 +1,5 @@
 import React from "react";
+import GallerySearch from "./GallerySeach.jsx";
 
 const images = [
   {
@@ -49,6 +50,7 @@ function Gallery() {
   return (
     <section className="gallery" aria-label="Galeria de flores">
       <h1 className="gallery__title">Gallery</h1>
+
       <div className="gallery__container">
         {images.map((img) => (
           <figure className="gallery__item" key={img.src}>
@@ -62,6 +64,7 @@ function Gallery() {
           </figure>
         ))}
       </div>
+      <GallerySearch />
     </section>
   );
 }
