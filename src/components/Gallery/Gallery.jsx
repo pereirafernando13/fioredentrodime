@@ -63,8 +63,8 @@ function Gallery() {
             <figcaption className="gallery__caption">{img.caption}</figcaption>
           </figure>
         ))}
+        <GallerySearch />
       </div>
-      <GallerySearch />
     </section>
   );
 }
