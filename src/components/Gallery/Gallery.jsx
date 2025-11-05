@@ -1,5 +1,4 @@
 import React from "react";
-import GallerySearch from "./GallerySearch.jsx";
 
 const images = [
   {
@@ -43,31 +42,18 @@ function Gallery() {
     <section className="gallery" aria-label="Galeria de flores">
       <h1 className="gallery__title">Gallery</h1>
 
-      <div className="gallery__layout">
-        {/* Sidebar com a busca */}
-        <aside className="gallery__sidebar" aria-label="Busca e filtros">
-          <h2 className="gallery__sidebar-title">Buscar</h2>
-          <GallerySearch />
-        </aside>
-
-        {/* Conteúdo principal: grid 3 colunas */}
-        <div className="gallery__content">
-          <div className="gallery__grid">
-            {images.map((img) => (
-              <figure className="gallery__item" key={img.src}>
-                <img
-                  className="gallery__img"
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                />
-                <figcaption className="gallery__caption">
-                  {img.caption}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
+      <div className="gallery__container">
+        {images.map((img) => (
+          <figure className="gallery__item" key={img.src}>
+            <img
+              className="gallery__img"
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+            />
+            <figcaption className="gallery__caption">{img.caption}</figcaption>
+          </figure>
+        ))}
       </div>
     </section>
   );
