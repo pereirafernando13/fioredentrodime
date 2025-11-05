@@ -1,6 +1,6 @@
 .about {
   display: grid;
-  grid-template-columns: 1fr 1.2fr; /* imagem | texto */
+  grid-template-columns: 1fr 1.2fr;
   gap: 48px;
   align-items: center;
   max-width: 1200px;

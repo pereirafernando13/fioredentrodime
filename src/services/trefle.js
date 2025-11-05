@@ -4,7 +4,7 @@ let expAt = 0;
 async function fetchClientToken() {
   const r = await fetch("/api/trefle-claim", { cache: "no-store" });
   if (!r.ok) throw new Error("Falha no claim");
-  const data = await r.json(); // { token, expiration }
+  const data = await r.json();
   clientToken = data.token;
   try {
     expAt = data.expiration ? Date.parse(data.expiration) : 0;
@@ -34,7 +34,6 @@ export async function searchPlants(query, page = 1) {
 
   let r = await fetchNoStore(url);
 
-  // Se o token não casar com o origin (ou expirou), re-clama e tenta de novo
   if (r.status === 401) {
     clientToken = null;
     await fetchClientToken();

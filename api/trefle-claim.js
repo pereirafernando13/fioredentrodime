@@ -1,10 +1,7 @@
-// /api/trefle-claim.js
 export default async function handler(req, res) {
   try {
-    // Em produção na Vercel, esse header vem certinho. Se não vier, usa VERCEL_URL.
     const isDev = process.env.NODE_ENV !== "production";
 
-    // Em DEV, sempre emite JWT para http://localhost:5173
     const origin = isDev
       ? "http://localhost:5173"
       : req.headers.origin ||
@@ -15,7 +12,7 @@ export default async function handler(req, res) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ origin, token }),
-      cache: "no-store", // 👈
+      cache: "no-store",
     });
 
     if (!r.ok) {
@@ -23,7 +20,7 @@ export default async function handler(req, res) {
       return res.status(r.status).json({ error: "claim_failed", detail: txt });
     }
 
-    const data = await r.json(); // { token, expiration }
+    const data = await r.json();
     res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
     res.setHeader("Pragma", "no-cache");
     res.setHeader("Expires", "0");
