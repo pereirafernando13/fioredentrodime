@@ -1,0 +1,63 @@
+.explorer {
+  padding: 32px 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+.explorer__title {
+  font-family: "Italiana";
+  font-size: 32px;
+  margin: 0 0 16px;
+}
+.explorer__form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.explorer__input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.explorer__button {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #1f7a4f;
+  color: #fff;
+  cursor: pointer;
+}
+.explorer__grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(5, minmax(210px, 1fr));
+}
+.explorer__img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.explorer__caption {
+  padding-top: 8px;
+  font:
+    500 14px/1.3 "Inter",
+    sans-serif;
+  color: #333;
+}
+.explorer__pager {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 16px;
+}
+@media (max-width: 900px) {
+  .explorer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .explorer__grid {
+    grid-template-columns: 1fr;
+  }
+}
